@@ -8,10 +8,13 @@
     <div class="container">
         <nav class="navbar navbar-inverse">
             <div class="navbar-header">
-                <a class="navbar-brand" href="{{ URL::to('products') }}">InventoryApp</a>
+                <a class="navbar-brand" href="/products">InventoryApp</a>
             </div>
             <ul class="nav navbar-nav">
-                <li><a href="{{ URL::to('products') }}">List products</a></li>
+                <li><a href="/products">List products</a></li>
+            </ul>
+            <ul class="nav navbar-nav">
+                <li><a href="products/create">Add product</a></li>
             </ul>
         </nav>
     </div>
