@@ -10,6 +10,7 @@
         <td>ID</td>
         <td>Name</td>
         <td>Price</td>
+        <td>Actions</td>
     </tr>
     </thead>
     <tbody>
@@ -18,6 +19,15 @@
             <td>{{ $product->id }}</td>
             <td>{{ $product->name }}</td>
             <td>{{ $product->price }}</td>
+            <td>
+                <form action="{{ route('products.destroy', $product->id) }}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" title="delete" class="btn btn-warning">
+                        <i class="fas fa-trash fa-lg text-danger"></i>
+                    </button>
+                </form>
+            </td>
         </tr>
     @endforeach
     </tbody>
