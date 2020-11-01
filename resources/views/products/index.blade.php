@@ -26,10 +26,13 @@
             <td>{{ $product->name }}</td>
             <td>{{ $product->price }}</td>
             <td>
+                <a href="{{ route('products.edit', $product->id) }}">
+                    <i class="fas fa-edit fa-lg"></i>
+                </a>
                 <form action="{{ route('products.destroy', $product->id) }}" method="POST">
                     @csrf
                     @method('DELETE')
-                    <button type="submit" title="delete" class="btn btn-warning">
+                    <button type="submit" title="delete">
                         <i class="fas fa-trash fa-lg text-danger"></i>
                     </button>
                 </form>

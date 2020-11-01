@@ -67,19 +67,25 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        //
+        $product = Product::find($id);
+        return view('products.edit')->with('product', $product);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param Request $request
+     * @param StoreProduct $request
      * @param  int  $id
      * @return Response
      */
-    public function update(Request $request, $id)
+    public function update(StoreProduct $request, $id)
     {
-        //
+        $request->validated();
+        $product = Product::find($id);
+        $product->update($request->all());
+
+        return redirect()->route('products.index')
+            ->with('success', 'Product updated successfully');
     }
 
     /**
