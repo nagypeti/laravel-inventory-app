@@ -28,5 +28,13 @@
                 {{ date_format($product->created_at, 'jS M Y') }}
             </div>
         </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Labels:</strong>
+                @foreach($product->labels as $label)
+                    {{ $label->label }}
+                @endforeach
+            </div>
+        </div>
     </div>
 @endsection

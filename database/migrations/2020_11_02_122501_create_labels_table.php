@@ -16,6 +16,7 @@ class CreateLabelsTable extends Migration
         Schema::create('labels', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('product_id')->unsigned();
+            $table->string('name', 255);
             $table->foreign('product_id')
                 ->references('id')
                 ->on('products')

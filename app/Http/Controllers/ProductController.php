@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Label;
 use App\Models\Product;
 use App\Http\Requests\Product as ProductRequest;
 use Illuminate\Http\Response;
@@ -43,6 +44,8 @@ class ProductController extends Controller
         $model->name = $request->get('name');
         $model->price = $request->get('price');
         $model->save();
+
+        $model->labels()->createMany($request->get('labels'));
         return redirect()->route('products.index')
             ->with('success', 'Product added successfully!');;
     }
