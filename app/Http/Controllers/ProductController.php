@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreProduct;
 use App\Models\Product;
+use App\Http\Requests\Product as ProductRequest;
 use Illuminate\Http\Response;
 
 class ProductController extends Controller
@@ -32,10 +32,10 @@ class ProductController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param StoreProduct $request
+     * @param ProductRequest $request
      * @return Response
      */
-    public function store(StoreProduct $request)
+    public function store(ProductRequest $request)
     {
         $request->validated();
 
@@ -74,11 +74,11 @@ class ProductController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param StoreProduct $request
-     * @param  int  $id
+     * @param ProductRequest $request
+     * @param int $id
      * @return Response
      */
-    public function update(StoreProduct $request, $id)
+    public function update(ProductRequest $request, $id)
     {
         $request->validated();
         $product = Product::find($id);
