@@ -16,8 +16,7 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::all();
-        return view('products.index')
-            ->with('products', $products);
+        return view('products.index')->with('products', $products);
     }
 
     /**
@@ -44,7 +43,8 @@ class ProductController extends Controller
         $model->name = $request->get('name');
         $model->price = $request->get('price');
         $model->save();
-        return redirect('/products');
+        return redirect()->route('products.index')
+            ->with('success', 'Product added successfully!');;
     }
 
     /**
@@ -85,7 +85,7 @@ class ProductController extends Controller
         $product->update($request->all());
 
         return redirect()->route('products.index')
-            ->with('success', 'Product updated successfully');
+            ->with('success', 'Product updated successfully!');
     }
 
     /**
@@ -97,6 +97,7 @@ class ProductController extends Controller
     public function destroy($id)
     {
         Product::destroy($id);
-        return redirect()->route('products.index')->with('success', 'Product deleted successfully!');
+        return redirect()->route('products.index')
+            ->with('success', 'Product deleted successfully!');
     }
 }
