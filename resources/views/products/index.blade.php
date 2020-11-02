@@ -29,6 +29,9 @@
                 <a href="{{ route('products.edit', $product->id) }}">
                     <i class="fas fa-edit fa-lg"></i>
                 </a>
+                <a href="{{ route('products.show', $product->id) }}" title="show">
+                    <i class="fas fa-eye text-success fa-lg"></i>
+                </a>
                 <form action="{{ route('products.destroy', $product->id) }}" method="POST">
                     @csrf
                     @method('DELETE')
