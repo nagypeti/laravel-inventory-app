@@ -17,4 +17,9 @@ class Product extends Model
         'name',
         'price',
     ];
+
+    public function labels()
+    {
+        return $this->hasMany(Label::class);
+    }
 }
