@@ -32,13 +32,6 @@
                 <a href="{{ route('products.show', $product->id) }}" title="show">
                     <i class="fas fa-eye text-success fa-lg"></i>
                 </a>
-                <form action="{{ route('products.destroy', $product->id) }}" method="POST">
-                    @csrf
-                    @method('DELETE')
-                    <button type="submit" title="delete">
-                        <i class="fas fa-trash fa-lg text-danger"></i>
-                    </button>
-                </form>
             </td>
         </tr>
     @endforeach
