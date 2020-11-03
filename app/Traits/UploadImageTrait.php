@@ -8,7 +8,7 @@ trait UploadImageTrait
 {
     public function uploadOneToPublic(UploadedFile $image, string $name) : string
     {
-        $folder = '/uploads/images/';
+        $folder = '/images/products/';
 
         $image->storeAs(
             $folder,
