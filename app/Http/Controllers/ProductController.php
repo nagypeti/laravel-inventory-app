@@ -2,12 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Image;
 use App\Models\Product;
 use App\Http\Requests\Product as ProductRequest;
+use App\Traits\UploadImageTrait;
 use Illuminate\Http\Response;
+use Illuminate\Support\Str;
 
 class ProductController extends Controller
 {
+    use UploadImageTrait;
+
     /**
      * Display a listing of the resource.
      *
@@ -43,6 +48,15 @@ class ProductController extends Controller
         $model->name = $request->get('name');
         $model->price = $request->get('price');
         $model->save();
+
+        if ($request->has('image')) {
+            $name = Str::slug($request->get('name') . '_' . time());
+            $path = $this->uploadOneToPublic($request->file('image'), $name);
+            $image = new Image();
+            $image->name = $name;
+            $image->path = $path;
+            $model->image()->save($image);
+        }
 
         return redirect()->route('products.index')
             ->with('success', 'Product added successfully!');;
