@@ -26,6 +26,7 @@ class Product extends FormRequest
         return [
             'name' => 'required',
             'price' => ['required', 'integer'],
+            'image' => 'mimes:jpeg,png|max:1024',
         ];
     }
 }
