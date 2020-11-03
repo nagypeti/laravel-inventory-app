@@ -12,13 +12,19 @@
 <body>
     <div class="container">
         <div class="navbar navbar-light">
-            <a class="navbar-brand" href="/products">InventoryApp</a>
+            <a class="navbar-brand" href="/products">@lang('layout.app_name')</a>
             <ul class="nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="/products">List products</a>
+                    <a class="nav-link" href="/products">@lang('layout.list')</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="/products/create">Add product</a>
+                    <a class="nav-link" href="/products/create">@lang('layout.add')</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/locale/hu">@lang('layout.lang_hu')</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/locale/en">@lang('layout.lang_en')</a>
                 </li>
             </ul>
         </div>
@@ -27,7 +33,7 @@
         @yield('content')
     </div>
     <div class="text-center footer">
-        <p>Contact</p>
+        <p>@lang('layout.contact')</p>
         <p>+36-70/414-9202</p>
         <p>nagypeti222@gmail.com</p>
     </div>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
@@ -17,5 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return redirect('products');
 });
+
+Route::get('locale/{locale?}', [LanguageController::class, 'setLocale']);
 
 Route::resource('products', ProductController::class);

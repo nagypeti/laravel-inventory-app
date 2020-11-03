@@ -2,7 +2,7 @@
 
 @section('content')
 
-<h1>Add a product</h1>
+<h1>@lang('layout.add')</h1>
 
 @if ($errors->any())
     <div class="alert alert-danger">
@@ -18,25 +18,25 @@
     @csrf
 
     <div class="form-group">
-        <strong>Image:</strong>
+        <strong>@lang('products.image')</strong>
         <input type="file" name="image" placeholder="Image">
     </div>
     <div class="form-row">
         <div class="col-xs-6 col-sm-6 col-md-6">
             <div class="form-group">
-                <strong>Name:</strong>
+                <strong>@lang('products.name')</strong>
                 <input type="text" name="name" class="form-control" placeholder="Name">
             </div>
         </div>
         <div class="col-xs-6 col-sm-6 col-md-6">
             <div class="form-group">
-                <strong>Price:</strong>
+                <strong>@lang('products.price')</strong>
                 <input class="form-control" name="price" placeholder="Price">
             </div>
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">@lang('form.submit')</button>
     </div>
 </form>
 

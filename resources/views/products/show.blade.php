@@ -12,25 +12,25 @@
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>ID:</strong>
+                <strong>@lang('products.id')</strong>
                 {{ $product->id }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Price:</strong>
+                <strong>@lang('products.price')</strong>
                 {{ $product->price }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Date Created:</strong>
+                <strong>@lang('products.created_at')</strong>
                 {{ date_format($product->created_at, 'jS M Y') }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Labels:</strong>
+                <strong>@lang('products.labels')</strong>
                 @foreach($product->labels as $label)
                     {{ $label->label }}
                 @endforeach

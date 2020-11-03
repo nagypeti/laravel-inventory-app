@@ -2,7 +2,7 @@
 
 @section('content')
 
-<h1>Products</h1>
+<h1>@lang('layout.products')</h1>
 
 @if ($message = Session::get('success'))
     <div class="alert alert-success">
@@ -13,10 +13,10 @@
 <table class="table table-striped table-bordered">
     <thead>
     <tr>
-        <td>ID</td>
-        <td>Name</td>
-        <td>Price</td>
-        <td>Actions</td>
+        <td>@lang('products.id')</td>
+        <td>@lang('products.name')</td>
+        <td>@lang('products.price')</td>
+        <td>@lang('layout.actions')</td>
     </tr>
     </thead>
     <tbody>
