@@ -9,6 +9,7 @@ https://dbdiagram.io/d/5fa0567e3a78976d7b7a3049
 1. Run composer install to install dependencies
     - this step is required because of the volume used in docker-compose.yml will delete the vendor folder on copy inside the container
 2. Run docker-compose up -d
+3. Got to your terminal run: `docker exec -it laravel-inventory-app /bin/bash` and inside the container run `php artisan migrate`
 3. Go to localhost:8080
 
 ### Deployment plan
